@@ -41,6 +41,54 @@
             padding: 4rem 0;
         }
 
+        /* Section Headers Styling */
+        .section-header {
+            position: relative;
+            margin-bottom: 2.5rem;
+            padding-bottom: 0.8rem;
+            display: inline-block;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.3rem;
+            color: var(--primary);
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header .section-subheader {
+            color: var(--gray);
+            font-style: italic;
+            font-size: 1rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary), var(--accent), transparent);
+            border-radius: 3px;
+        }
+
+        .section-header::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: -15px;
+            width: 80px;
+            height: 80px;
+            background: var(--accent);
+            opacity: 0.1;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
         /* Header Styles */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
@@ -601,6 +649,14 @@
             .nav-container {
                 flex-wrap: wrap;
             }
+            
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-header .section-subheader {
+                font-size: 0.9rem;
+            }
         }
 
         /* Tooltip Styles */
@@ -661,6 +717,18 @@
     opacity: 1 !important;
     transform: none !important;
     visibility: visible !important;
+}
+/* Add this CSS to your <style> section */
+.employment-type {
+    display: inline-block;
+    font-size: 0.85rem;
+    color: #718096;
+    font-weight: normal;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background-color: #f0f4f8;
+    margin-left: 10px;
+    vertical-align: middle;
 }
 </style>
 </head>
@@ -725,8 +793,10 @@
     <!-- Professional Experience Section -->
     <section id="experience">
         <div class="container">
-            <h2>Professional Experience</h2>
- 	    <div class="section-subheader">Building expertise through professional roles</div>
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <div class="section-subheader">Building expertise through professional roles</div>
+            </div>
             <div class="timeline">
                 <!-- Experience 1 -->
                 <div class="timeline-item">
@@ -738,7 +808,7 @@
                             </div>
                             <span class="date">May 2024 – Present</span>
                         </div>
-                        <h3 class="position">Data Engineer – Energy and Emission | Sustainability (Contract)</h3>
+                        <h3 class="position">Data Engineer – Energy and Emission | Sustainability <span class="employment-type">Contract</span></h3>
                         <h4>Energy and Emission Calculations</h4>
                         <ul class="responsibilities">
                             <li>Collected data from designated PICs on emission sources and energy consumption at PHM.</li>
@@ -747,7 +817,7 @@
                             <li>Calculated emissions from process and venting (Dehydrators, Storage Tanks, loading/unloading).</li>
                             <li>Calculated Scope 2 emissions from electricity consumption (e.g., PLN).</li>
                             <li>Reviewed API Compendium, IPCC guidelines, and other emission standards.</li>
-                            <li>Monitored and reviewed updates in Pertamina’s emission calculation tools.</li>
+                            <li>Monitored and reviewed updates in Pertamina's emission calculation tools.</li>
                         </ul>
                         <h4>Reporting</h4>
                         <ul class="responsibilities">
@@ -776,7 +846,7 @@
                             </div>
                             <span class="date">Jan 2023 – May 2024</span>
                         </div>
-                        <h3 class="position">Project Control Staff (Pipe Welding & Inspection Control System Coordinator) (Contract)</h3>
+                        <h3 class="position">Project Control Staff (Pipe Welding & Inspection Control System Coordinator) <span class="employment-type">Contract</span></h3>
                         <ul class="responsibilities">
                             <li>Monitoring, controlling, and reporting progress of piping & fabrication, inspection, erection and preparing for test package.</li>
                             <li>Controlling red-line mark-up, Site Instruction for piping isometric, prepare data line list for test package, Pre-Comm, Commissioning, and monitoring pipe spool fabrication and installation.</li>
@@ -795,8 +865,10 @@
     <!-- Freelance Projects Section -->
     <section id="freelance">
         <div class="container">
-            <h2>Freelance Project Experience</h2>
-	    <div class="section-subheader">Specialized consulting work in engineering</div>
+            <div class="section-header">
+                <h2>Freelance Project Experience</h2>
+                <div class="section-subheader">Specialized consulting work in engineering</div>
+            </div>
             <div class="timeline">
                 <!-- Freelance 1 -->
                 <div class="timeline-item">
@@ -808,7 +880,7 @@
                             </div>
                             <span class="date">Jan 2025</span>
                         </div>
-                        <h3 class="position">Mechanical Static Engineer (Freelance)</h3>
+                        <h3 class="position">Mechanical Static Engineer <span class="employment-type">Freelance</span></h3>
                         <ul class="responsibilities">
                             <li>Performing Mechanical Calculation for the Degasser & Electrostatic Coalescer skid packages as part of the Crude Oil Stabilization Unit for the Hidayah Development Project.</li>
                         </ul>
@@ -825,7 +897,7 @@
                             </div>
                             <span class="date">Oct 2024</span>
                         </div>
-                        <h3 class="position">Mechanical Static Engineer (Freelance)</h3>
+                        <h3 class="position">Mechanical Static Engineer <span class="employment-type">Freelance</span></h3>
                         <ul class="responsibilities">
                             <li>Performing Mechanical Calculation of Pressure Vessel for Iron Sponge Absorber (100-V-116 A/B) according to ASME and validation to ensure compliance with project requirements.</li>
                         </ul>
@@ -842,7 +914,7 @@
                             </div>
                             <span class="date">April 2024</span>
                         </div>
-                        <h3 class="position">Mechanical Engineer (FEM) (Freelance)</h3>
+                        <h3 class="position">Mechanical Engineer (FEM) <span class="employment-type">Freelance</span></h3>
                         <ul class="responsibilities">
                             <li>Performing Finite Element Method (FEM) analysis on a pressure vessel to determine stress and displacement on the shell and each nozzle, knuckle head and each nozzle, as well as calculate cycle life analysis.</li>
                         </ul>
@@ -859,7 +931,7 @@
                             </div>
                             <span class="date">Feb 2024</span>
                         </div>
-                        <h3 class="position">Process Engineer Estimator (Freelance)</h3>
+                        <h3 class="position">Process Engineer Estimator <span class="employment-type">Freelance</span></h3>
                         <ul class="responsibilities">
                             <li>Conducting equipment sizing and process planning for heat exchanger, including shell and tube as well as plate and frame types, for tender project requirements.</li>
                         </ul>
@@ -876,7 +948,7 @@
                             </div>
                             <span class="date">Aug – Dec 2023</span>
                         </div>
-                        <h3 class="position">Mechanical Engineer (CFD) (Freelance)</h3>
+                        <h3 class="position">Mechanical Engineer (CFD) <span class="employment-type">Freelance</span></h3>
                         <ul class="responsibilities">
                             <li>Performing Computational Fluid Dynamics (CFD) simulations based on process design data and actual conditions to evaluate heat transfer processes and forces within the Heat Exchanger. Connecting this with Finite Element Analysis (FEA) Stress.</li>
                         </ul>
@@ -893,7 +965,7 @@
                             </div>
                             <span class="date">Nov – Dec 2022</span>
                         </div>
-                        <h3 class="position">Mechanical Engineer (CFD) (Freelance)</h3>
+                        <h3 class="position">Mechanical Engineer (CFD) <span class="employment-type">Freelance</span></h3>
                         <ul class="responsibilities">
                             <li>Performing Computational Fluid Dynamics (CFD) of hydrodynamic forces above the FPSO, extending to the liquid level within the LP and HP KO Drum Flare, to assess the variation in liquid level within the acceptable range of the liquid level sensor tolerance.</li>
                         </ul>
@@ -908,6 +980,7 @@
         <div class="container">
             <h2>Education</h2>
 	    <div class="section-subheader">Academic foundation and achievements</div>
+            </div>
             <div class="education-card">
                 <div class="education-header">
                     <div>
